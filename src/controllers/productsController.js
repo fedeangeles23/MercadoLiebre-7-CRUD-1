@@ -18,12 +18,19 @@ const controller = {
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		// Do the magic
+		const id = +req.params.id;
+
+		let product = products.find(product => product.id === id)
+
+		return res.render('detail', {
+			product,
+			toThousand
+		})
 	},
 
 	// Create - Form to create
 	create: (req, res) => {
-		// Do the magic
+		return res.render('product-create-form')
 	},
 	
 	// Create -  Method to store
@@ -33,7 +40,14 @@ const controller = {
 
 	// Update - Form to edit
 	edit: (req, res) => {
-		// Do the magic
+		const id = +req.params.id;
+
+		let product = products.find(product => product.id === id)
+
+		return res.render('product-edit-form', {
+			productToEdit: product,
+			toThousand
+		})
 	},
 	// Update - Method to update
 	update: (req, res) => {
