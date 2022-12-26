@@ -35,7 +35,7 @@ const controller = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		// Do the magic
+		return res.send(req.body)	/* Checkear los datos del [{}] */
 	},
 
 	// Update - Form to edit
@@ -51,12 +51,12 @@ const controller = {
 	},
 	// Update - Method to update
 	update: (req, res) => {
-		// Do the magic
+		return res.send("Producto a actualizar")
 	},
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		// Do the magic
+		return res.send("Producto a eliminar")
 	}
 };
 
